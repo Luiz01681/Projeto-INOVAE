@@ -285,26 +285,24 @@ export default function App() {
   );
 
   return (
-    <div className="w-full h-screen bg-gray-200 flex items-center justify-center p-4">
-      <div className="w-full max-w-6xl aspect-video bg-white shadow-2xl rounded-3xl overflow-hidden border-8 border-gray-800 flex flex-col">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={screen}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="h-full overflow-y-auto"
-          >
-            {screen === "skin-home" && <SkinHERHome />}
-            {screen === "login" && <LoginScreen />}
-            {screen === "safety-home" && <SafetyHome />}
-            {screen === "map" && <MapRiskZones />}
-            {screen === "contacts" && <EmergencyContacts />}
-            {screen === "profile" && <Profile />}
-            {screen === "calling" && <CallingScreen />}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+    <div className="w-full h-screen bg-white flex flex-col overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={screen}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="h-full overflow-y-auto"
+        >
+          {screen === "skin-home" && <SkinHERHome />}
+          {screen === "login" && <LoginScreen />}
+          {screen === "safety-home" && <SafetyHome />}
+          {screen === "map" && <MapRiskZones />}
+          {screen === "contacts" && <EmergencyContacts />}
+          {screen === "profile" && <Profile />}
+          {screen === "calling" && <CallingScreen />}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
